@@ -13,6 +13,76 @@
 <script>
 
 
-</script>
-</body>
+function getComputerChoice(pc_choice){
+    if (pc_choice <= 33) {
+        console.log("rock");
+        return "rock";
+    }
+    else if ((pc_choice <= 66) && (pc_choice > 33)) { 
+        console.log("paper");
+        return "paper";
+    }
+    else if ((pc_choice <= 100) && (pc_choice > 66)) {
+        console.log("scissor");
+        return "scissor";
+    }
+}              
+const calcNumberChoice = (Math.trunc(Math.random() * 100));     
+
+
+function getHumanChoice(){
+    const human_choice = prompt("Rock, Paper, Scissors!").toLowerCase();
+    console.log(human_choice);
+    return human_choice;
+}  
+  
+
+function playRound(humanChoice, computerChoice) {
+   if(humanChoice === computerChoice){
+    console.log("equal"); 
+    return "equal";
+   }
+   else if ((humanChoice === "rock") && (computerChoice === "scissor")){   
+    console.log("you won");
+    return "you won";
+   }
+   else if ((humanChoice === "rock") && (computerChoice === "paper")){
+    console.log("you lose");
+    return "you lose";
+   }  
+   else if ((humanChoice === "paper") && (computerChoice) === "rock"){
+    console.log("you won");
+    return "you won";
+   }
+   else if ((humanChoice === "paper") && (computerChoice) === "scissor"){
+    console.log("you lose");
+    return "you lose";
+   }
+   else if ((humanChoice === "scissor") && (computerChoice) === "rock"){
+   console.log("you lose");
+   return "you lose";
+   }
+   else if ((humanChoice === "scissor") && (computerChoice) === "paper"){
+    console.log("you won");
+    return "you won"
+   }
+   else {
+    console.log("invalid input");
+    return "invalid input";
+   }
+}        
+const human_Choice = getHumanChoice(); 
+const computer_Choice = getComputerChoice(calcNumberChoice); 
+  
+ 
+playRound(human_Choice, computer_Choice);  
+ 
+
+ 
+const humanScore = 0;
+const computerScore = 0;
+
+</script>    
+</body> 
 </html>
+        
