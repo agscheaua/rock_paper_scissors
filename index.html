@@ -5,102 +5,150 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-
+<script>
 
  
 
 
-<script>
-  
+
+
+
+
+
+
+
+
+
+   
 
 function getHumanChoice(){
     const human_choice = prompt("Rock, Paper, Scissors!").toLowerCase();
-    //console.log(human_choice);
+    console.log(human_choice);
     return human_choice;
 }   
-
-
+ 
 function getComputerChoice(pc_choice){
     if (pc_choice <= 33) {
-        //console.log("rock");
+        console.log("rock");
         return "rock";
     }
     else if ((pc_choice <= 66) && (pc_choice > 33)) { 
-        //console.log("paper");
+        console.log("paper");
         return "paper";
     }
     else if ((pc_choice <= 100) && (pc_choice > 66)) {
-        //console.log("scissor");
+        console.log("scissor");
         return "scissor";
-    }
-}              
-const calcNumberChoice = (Math.trunc(Math.random() * 100));     
-
-
-function playGame(){
-function playRound(humanChoice, computerChoice) {
-   if(humanChoice === computerChoice){
-    console.log("equal"); 
-    return "equal";
-   }
-   else if ((humanChoice === "rock") && (computerChoice === "scissor")){   
-    console.log("you won");
-    return "you won";
-   }
-   else if ((humanChoice === "rock") && (computerChoice === "paper")){
-    console.log("you lose");
-    return "you lose";
-   }  
-   else if ((humanChoice === "paper") && (computerChoice) === "rock"){
-    console.log("you won");
-    return "you won";
-   }
-   else if ((humanChoice === "paper") && (computerChoice) === "scissor"){
-    console.log("you lose");
-    return "you lose";
-   }
-   else if ((humanChoice === "scissor") && (computerChoice) === "rock"){
-   console.log("you lose");
-   return "you lose";
-   }
-   else if ((humanChoice === "scissor") && (computerChoice) === "paper"){
-    console.log("you won");
-    return "you won"
-   }
-   else {
-    console.log("invalid input");
-    return "invalid input";
-   }
-} 
+    } 
+}               
+   
+const calcNumberChoice = (Math.trunc(Math.random() * 100));  
 const human_Choice = getHumanChoice(); 
-const computer_Choice = getComputerChoice(calcNumberChoice);        
-let playRoundWinner = playRound(human_Choice, computer_Choice); 
+const computer_Choice = getComputerChoice(calcNumberChoice);  
+  
+function playRound(humanChoice, computerChoice) {
+    if(humanChoice === computerChoice){
+        console.log("equal"); 
+        return "equal";
+    }
+    else if ((humanChoice === "rock") && (computerChoice === "scissor")){   
+        console.log("you won");
+        return "you won";
+    }
+    else if ((humanChoice === "rock") && (computerChoice === "paper")){
+        console.log("you lose");
+        return "you lose";
+    }  
+    else if ((humanChoice === "paper") && (computerChoice) === "rock"){
+        console.log("you won");
+        return "you won";
+    }
+    else if ((humanChoice === "paper") && (computerChoice) === "scissor"){
+        console.log("you lose");
+        return "you lose";
+    }
+    else if ((humanChoice === "scissor") && (computerChoice) === "rock"){
+        console.log("you lose");
+        return "you lose";
+    }
+    else if ((humanChoice === "scissor") && (computerChoice) === "paper"){
+        console.log("you won");
+        return "you won"
+    }
+    else {
+        console.log("invalid input");
+        return "invalid input";
+    } 
+}
 
+let playRoundWinner = playRound(human_Choice, computer_Choice);
+
+console.log(`This is the value of playRoundWinner = ${playRoundWinner}`);
+
+let humanScore = 0; 
+let computerScore = 0; 
 
 function gameScore(){
-    let humanScore = 0;
-    let computerScore = 0;
     if(playRoundWinner === "you won"){
-        humanScore++;
-        console.log(humanScore);
-        return humanScore;
+        humanScore += 1;
+        return;
     }
     else if(playRoundWinner === "you lose"){
-        computerScore++;
-        console.log(computerScore);
-        return computerScore; 
+        computerScore += 1; 
+        return;
     }  
-} 
-gameScore();
+    else {
+        
+    }
+}
+console.log(humanScore, computerScore);
+gameScore(); 
+   
   
-} 
-playGame();
-playGame();
-   
-    
-   
+     
+        
       
-  
+   
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>     
