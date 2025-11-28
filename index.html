@@ -45,72 +45,71 @@ function getComputerChoice(pc_choice){
 const calcNumberChoice = (Math.trunc(Math.random() * 100));  
 const human_Choice = getHumanChoice(); 
 const computer_Choice = getComputerChoice(calcNumberChoice);  
-  
+
+function playGame(){
 function playRound(humanChoice, computerChoice) {
     if(humanChoice === computerChoice){
-        console.log("equal"); 
+        //console.log("equal"); 
         return "equal";
     }
     else if ((humanChoice === "rock") && (computerChoice === "scissor")){   
-        console.log("you won");
+        //console.log("you won");
         return "you won";
     }
     else if ((humanChoice === "rock") && (computerChoice === "paper")){
-        console.log("you lose");
+        //console.log("you lose");
         return "you lose";
     }  
     else if ((humanChoice === "paper") && (computerChoice) === "rock"){
-        console.log("you won");
+        //console.log("you won");
         return "you won";
     }
     else if ((humanChoice === "paper") && (computerChoice) === "scissor"){
-        console.log("you lose");
+        //console.log("you lose");
         return "you lose";
     }
     else if ((humanChoice === "scissor") && (computerChoice) === "rock"){
-        console.log("you lose");
+        //console.log("you lose");
         return "you lose";
     }
     else if ((humanChoice === "scissor") && (computerChoice) === "paper"){
-        console.log("you won");
+        //console.log("you won");
         return "you won"
     }
     else {
-        console.log("invalid input");
+        //console.log("invalid input");
         return "invalid input";
     } 
 }
-
-let playRoundWinner = playRound(human_Choice, computer_Choice);
-
-console.log(`This is the value of playRoundWinner = ${playRoundWinner}`);
-
+let para12 = playRound(human_Choice, computer_Choice);
+let para21 = playRound(human_Choice, computer_Choice);
 let humanScore = 0; 
 let computerScore = 0; 
-
-function gameScore(){
-    if(playRoundWinner === "you won"){
-        humanScore += 1;
-        return;
-    }
-    else if(playRoundWinner === "you lose"){
-        computerScore += 1; 
-        return;
-    }  
-    else {
-        
-    }
+function scoreGame(para1, para2){
+if (para1 === "you won"){
+    console.log("you won");
+    humanScore = humanScore + 1;
 }
-console.log(humanScore, computerScore);
-gameScore(); 
-   
+else if (para2 === "you lose"){
+    console.log("you lose");
+    computerScore = computerScore + 1;
+}
+else {}
+console.log(` This is your score: 5/${humanScore} \n`,`This is the computer score: 5/${computerScore}`); 
+}
+
+playRound(human_Choice, computer_Choice);
+scoreGame(para12, para21); 
+playRound(human_Choice, computer_Choice);
+scoreGame(para12, para21); 
+}   
+playGame();
+
+                     
+                
+                    
+       
   
-     
-        
-      
-   
-        
-    
 
 
 
@@ -135,23 +134,6 @@ gameScore();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>     
+</script>      
 </body> 
-</html>
-           
+</html> 
