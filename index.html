@@ -42,9 +42,6 @@ function getComputerChoice(pc_choice){
     } 
 }               
    
-const calcNumberChoice = (Math.trunc(Math.random() * 100));  
-const human_Choice = getHumanChoice(); 
-const computer_Choice = getComputerChoice(calcNumberChoice);  
 
 function playGame(){
 function playRound(humanChoice, computerChoice) {
@@ -79,36 +76,101 @@ function playRound(humanChoice, computerChoice) {
     else {
         //console.log("invalid input");
         return "invalid input";
-    } 
+    }
 }
-let para12 = playRound(human_Choice, computer_Choice);
-let para21 = playRound(human_Choice, computer_Choice);
+
+const calcNumberChoice = (Math.trunc(Math.random() * 100));  
+const human_Choice = getHumanChoice(); 
+const computer_Choice = getComputerChoice(calcNumberChoice);
+return playRound(human_Choice, computer_Choice);
+}
+
+let fisrtRound = playGame();
+let secondRound = playGame();
+let thirdRound = playGame();
+let forthRound = playGame();
+let fiveRound = playGame();
+
 let humanScore = 0; 
-let computerScore = 0; 
-function scoreGame(para1, para2){
-if (para1 === "you won"){
+let computerScore = 0;
+
+if (fisrtRound === "you won"){
     console.log("you won");
     humanScore = humanScore + 1;
 }
-else if (para2 === "you lose"){
+else if (fisrtRound === "you lose"){
     console.log("you lose");
     computerScore = computerScore + 1;
 }
+else if (fisrtRound === "equal"){
+    console.log("equal");
+}
 else {}
 console.log(` This is your score: 5/${humanScore} \n`,`This is the computer score: 5/${computerScore}`); 
+//return `${humanScore},${computerScore}`
+
+if (secondRound === "you won"){
+    console.log("you won");
+    humanScore = humanScore + 1;
 }
+else if (secondRound === "you lose"){
+    console.log("you lose");
+    computerScore = computerScore + 1;
+}
+else if (secondRound === "equal"){
+    console.log("equal");
+}
+else {}
+console.log(` This is your score: 5/${humanScore} \n`,`This is the computer score: 5/${computerScore}`);  
+  
+if (thirdRound === "you won"){
+    console.log("you won");
+    humanScore = humanScore + 1;
+}
+else if (thirdRound === "you lose"){
+    console.log("you lose");
+    computerScore = computerScore + 1;
+}
+else if (thirdRound === "equal"){
+    console.log("equal");
+}
+else {}
+console.log(` This is your score: 5/${humanScore} \n`,`This is the computer score: 5/${computerScore}`);  
 
-playRound(human_Choice, computer_Choice);
-scoreGame(para12, para21); 
-playRound(human_Choice, computer_Choice);
-scoreGame(para12, para21); 
-}   
-playGame();
+if (forthRound === "you won"){
+    console.log("you won");
+    humanScore = humanScore + 1;
+}
+else if (forthRound === "you lose"){
+    console.log("you lose");
+    computerScore = computerScore + 1;
+}
+else if (forthRound === "equal"){
+    console.log("equal");
+}
+else {}
+console.log(` This is your score: 5/${humanScore} \n`,`This is the computer score: 5/${computerScore}`);  
 
+if (fiveRound === "you won"){
+    console.log("you won");
+    humanScore = humanScore + 1;
+}
+else if (fiveRound === "you lose"){
+    console.log("you lose");
+    computerScore = computerScore + 1;
+}
+else if (fiveRound === "equal"){
+    console.log("equal");
+}
+else {}
+console.log(` This is your score: 5/${humanScore} \n`,`This is the computer score: 5/${computerScore}`);  
+
+         
+                      
+                  
+                         
                      
-                
-                    
-       
+          
   
 
 
