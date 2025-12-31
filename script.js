@@ -42,43 +42,69 @@ gameInfo.classList.add("gameInfo");
 document.body.insertBefore(gameInfo, choiceTaken);
 
 let humanScore = 0; 
-let computerScore = 0;
+let computerScore = 0; 
 
-containerChoices.addEventListener("click", (event) => {
+gameInfo.textContent = "Select an option to begin the game!"; 
+
+humanChoiceTaken.textContent = "Player choice:";
+computerChoiceTaken.textContent = "Computer choice:"; 
+
+humanScoreBoard.textContent = "Player score:";
+computerScoreBoard.textContent = "Computer score:"; 
+
+
+containerChoices.addEventListener("mousedown", (event) => {
     let humanChoice = event.target.textContent.toLowerCase();
-
+    
     let calcNumberChoice = (Math.floor(Math.random() * 100 + 1)); 
     let computerChoice = getComputerChoice(calcNumberChoice);
+
+    if (humanChoice !== "rock" && humanChoice !== "paper" &&
+        humanChoice !== "scissor") {
+            humanChoice = "-";
+            computerChoice = "-";
+            gameInfo.textContent = "Invalid Player input!"; 
+        }
+    else{};
 
     humanChoiceTaken.textContent = `Player choice: ${humanChoice}`;
     computerChoiceTaken.textContent = `Computer choice: ${computerChoice}`;
 
     let oneRound = playRound(humanChoice, computerChoice);
-    
+     
     if (oneRound === "you won"){
         humanScore = humanScore + 1;
-        gameInfo.textContent = "The Player has won this round!";
+        gameInfo.textContent = "The Player has won this round!"; 
     }
     else if (oneRound === "you lose"){
         computerScore = computerScore + 1;
         gameInfo.textContent = "The Computer has won this round!";
     }
-    else if (oneRound === "equal"){ 
-        gameInfo.textContent = "Equal between the participants!";
+    else if ( (oneRound === "equal") && (computerChoice === "rock" ||
+        computerChoice === "paper" || computerChoice === "scissor") ){ 
+        gameInfo.textContent = "Equal round!"; 
     }
-    else {}; 
-
+    else {
+        gameInfo.textContent = "Invalid input!";
+    };  
+    
     if( (humanScore === 5) && (computerScore < 5)){
-    humanScore = 0;
-    computerScore = 0;
-    gameInfo.textContent = "The Player has won the game!"
+        gameInfo.textContent = "The Player has won the GAME!";
+        window.setTimeout( () => {
+            gameInfo.textContent = gameInfo.textContent = "Select an option to begin the game!";     
+        }, 3000);
+        humanScore = 0;
+        computerScore = 0;   
     }                   
     else if( (humanScore < 5) && (computerScore === 5) ){
-    humanScore = 0;
-    computerScore = 0;
-    gameInfo.textContent = "The Computer has won the game!";
+        gameInfo.textContent = "The Computer has won the GAME!";
+        window.setTimeout( () => {
+            gameInfo.textContent = "Select an option to begin the game!";    
+        }, 3000);
+        humanScore = 0;
+        computerScore = 0;
     }
-    else{};
+    else{};  
 
     humanScoreBoard.textContent = `Player score: ${humanScore}`;
     computerScoreBoard.textContent = `Computer score: ${computerScore}`;
